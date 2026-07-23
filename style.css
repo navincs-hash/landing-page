@@ -1,86 +1,321 @@
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial,sans-serif;
+/* Theme Colors setup */
+body {
+    background-color: #f8f9fa;
+    color: #333;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-body{
-background:#f4f4f4;
+/* When body has the .dark-mode class, switch backgrounds and card colors */
+body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
 }
 
-header{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:20px 60px;
-background:#222;
-color:white;
+body.dark-mode .navbar, 
+body.dark-mode .feature-card, 
+body.dark-mode .contact-section {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
-nav a{
-color:white;
-text-decoration:none;
-margin-left:20px;
+body.dark-mode .nav-links a {
+    color: #aaa;
 }
 
-.hero{
-text-align:center;
-padding:100px 20px;
-background:#4CAF50;
-color:white;
+body.dark-mode .feature-card h3 {
+    color: #4ba3e3;
 }
 
-.hero button{
-padding:12px 20px;
-margin-top:20px;
-border:none;
-background:white;
-color:#4CAF50;
-cursor:pointer;
-font-size:16px;
+/* Style for the theme button itself */
+.theme-btn {
+    background: #333;
+    color: #fff;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.2s ease;
 }
 
-.features{
-display:flex;
-justify-content:center;
-gap:30px;
-padding:60px;
+body.dark-mode .theme-btn {
+    background: #fff;
+    color: #333;
+}
+/* Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.card{
-background:white;
-padding:25px;
-width:250px;
-border-radius:10px;
-box-shadow:0 4px 10px rgba(0,0,0,.2);
-text-align:center;
+body {
+    background-color: #f8f9fa;
+    color: #333;
 }
 
-footer{
-text-align:center;
-padding:20px;
-background:#222;
-color:white;
+/* Header Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10%;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
 }
 
-@media(max-width:768px){
-
-header{
-flex-direction:column;
+.nav-links {
+    display: flex;
+    list-style: none;
 }
 
-nav{
-margin-top:15px;
+.nav-links li {
+    margin-left: 20px;
 }
 
-.features{
-flex-direction:column;
-align-items:center;
+.nav-links a {
+    text-decoration: none;
+    color: #555;
+    font-weight: 500;
 }
 
-.card{
-width:90%;
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    color: white;
+    text-align: center;
+    padding: 80px 20px;
 }
 
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0.9;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #ff6b6b;
+    color: white;
+    padding: 10px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+/* Features Section */
+.features {
+    display: flex;
+    justify-content: space-around;
+    padding: 60px 10%;
+    gap: 20px;
+}
+
+.feature-card {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    text-align: center;
+    flex: 1;
+}
+
+.feature-card h3 {
+    margin-bottom: 10px;
+    color: #1e3c72;
+}
+
+/* Footer Section */
+.footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #222;
+    color: #aaa;
+    font-size: 0.9rem;
+}
+/* Contact Form Styling */
+.contact-section {
+    padding: 60px 10%;
+    background-color: #fff;
+    max-width: 600px;
+    margin: 40px auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.contact-section h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #1e3c72;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.error-msg {
+    color: #ff6b6b;
+    font-size: 0.85rem;
+    margin-top: 5px;
+    display: block;
+}
+
+.success-msg {
+    color: #2ed573;
+    text-align: center;
+    margin-top: 15px;
+    font-weight: bold;
+}
+/* API Section Grid Styling */
+.api-section {
+    padding: 60px 10%;
+    background-color: #f1f3f5;
+}
+
+.api-section h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #1e3c72;
+}
+
+.api-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.api-card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    border-top: 4px solid #ff6b6b;
+}
+
+.api-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    text-transform: capitalize;
+    color: #333;
+}
+
+.api-card p {
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.4;
+}
+
+/* Dark Mode updates for the API container components */
+body.dark-mode .api-section {
+    background-color: #181818;
+}
+
+body.dark-mode .api-card {
+    background: #1e1e1e;
+}
+
+body.dark-mode .api-card h3 {
+    color: #e0e0e0;
+}
+
+body.dark-mode .api-card p {
+    color: #aaa;
+}
+/* Loading Spinner Styling */
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #e0e0e0;
+    border-top: 5px solid #1e3c72;
+    border-radius: 50%;
+    margin: 30px auto;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Error Alert Box Styling */
+.error-box {
+    background-color: #ffe3e3;
+    border-left: 5px solid #ff6b6b;
+    color: #c92a2a;
+    padding: 15px;
+    border-radius: 4px;
+    text-align: center;
+    max-width: 400px;
+    margin: 20px auto;
+    font-weight: 500;
+}
+
+body.dark-mode .error-box {
+    background-color: #2c1a1a;
+    color: #ff9b9b;
+    border-left-color: #ff6b6b;
+}
+/* ==========================================
+   Step 4: Media Queries for Mobile Devices 
+   ========================================== */
+
+@media (max-width: 768px) {
+    /* 1. Stack Navbar items vertically */
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px 5%;
+    }
+
+    .nav-links {
+        justify-content: center;
+        padding-left: 0;
+    }
+
+    .nav-links li {
+        margin: 0 10px;
+    }
+
+    /* 2. Scale down Hero typography */
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    /* 3. Turn Features from row layout into a single vertical column */
+    .features {
+        flex-direction: column;
+        padding: 40px 5%;
+    }
+
+    .feature-card {
+        width: 100%;
+    }
 }
